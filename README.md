@@ -3,7 +3,7 @@
 an independent set of documentation for MIT CLAS12 projects including MC submission
 
 
-# To test the entire workflow: (accurate as of 20190509)
+# To test the entire workflow: (accurate as of 5/9/19)
 
 Log onto a computing pool (e.g. SubMIT) and move to a working directory, then do the following:
 
