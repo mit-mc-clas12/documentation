@@ -2,7 +2,7 @@ Travis
 
 1. Sample Results
 
-Please find green checkmark at https://github.com/Sangbaek/clas12simulations/commits/master
+Please find green checkmark at https://github.com/mit-mc-clas12/clas12simulations/commits/master
 This means that the travis build was successful at the commit.
 If you click the detail, you will get a feel for what business travis exactly does.
 
