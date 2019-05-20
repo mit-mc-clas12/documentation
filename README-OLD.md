@@ -1,6 +1,3 @@
-# SQLite DB Schema
-See https://dbdiagram.io/d/5c9b829bf7c5bb70c72f6c34
-
 # scard.txt
 
 The first row 'project' was changed to 'group' because there is one more project at scard. If scard is in different format, parser.py will print ERROR and halt.
