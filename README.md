@@ -1,7 +1,3 @@
-# documentation
-
-an independent set of documentation for MIT CLAS12 projects including MC submission
-
 
 # Workflow Test
 
@@ -22,7 +18,7 @@ Create the DB, client submit one job and server reads the unsubmitted jobs, then
 
 
 # SQL Database Schema
-![Schema PDF File](CLAS12_Simulations_DB.pdf)
+[Schema PDF File](CLAS12_Simulations_DB.pdf)
 
 [db diagram link](https://dbdiagram.io/d/5c9b829bf7c5bb70c72f6c34)
 
