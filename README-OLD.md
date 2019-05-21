@@ -5,14 +5,6 @@ The first row 'project' was changed to 'group' because there is one more project
 # Submit_Job.py
 Executing `python src/Submit_Job.py` from the main directory will run all core functions, this can be used for testing purposes. Run `python src/Submit_Job.py -h` to see options that can be passed. Importantly, -d 1 will turn on some debugging messages, and -d 2 will turn on all debugging messages. 
  
-# clas12.condor
-condor_submit clas12.condor will submit a job.
-
-# run_job.sh
-an executable called by clas12.condor. It will call condor_wrapper.
-
-# condor_wrapper
-a script called by run_job.sh. It will call runscript.sh
 
 # runscript.sh
 This is a main script which calls generator, GEMC, decoder, and reconstruction. submit.py will update runscript.sh regarding scard.txt
@@ -23,20 +15,6 @@ To see genOptions, please look at followings:<br />
 SIDIS: https://github.com/JeffersonLab/clasdis-nocernlib/blob/master/README.md<br />
 DVCS: https://github.com/JeffersonLab/dvcsgen/blob/master/README.md<br />
 DIS-RAD: https://github.com/JeffersonLab/inclusive-dis-rad/blob/master/README.md
-
-# condorHelp
-Quickstart: https://support.opensciencegrid.org/support/solutions/articles/5000633410-osg-connect-quickstart
-
-
-To submit a job:
-----------------
-
-condor_submit condorTemplate.submit
-
-
-Troubleshooting:
-
- condor_q -better-analyze JOBID
 
 
 History:
