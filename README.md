@@ -32,6 +32,8 @@ singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --
 
 # HT Condor
 
+[Manual](http://research.cs.wisc.edu/htcondor/manual/v8.8/contentsname.html) 
+
 Useful commands:
 ---------------------
 
