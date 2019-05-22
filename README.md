@@ -1,10 +1,11 @@
 # Submitting a job
 
-Executing `Submit_Job.py [options] [scardfile]` from the main directory will run all core functions, this can be used for testing purposes. Run `Submit_Job.py -h` to see options that can be passed. 
-In particular:
+The script  `Submit_Job.py [options] [scardfile]` is used to submit jobs to various offsite farms to run the CLAS12 simulations. Run `Submit_Job.py -h` to see options that can be passed. 
+Important options:
+
 
 * `-d 1` will turn on some debugging messages, `-d 2` will turn on all debugging messages. 
-* `-s` will submit the jobs 
+* `-s` will submit the job(s)  
 *  `scardfile` : location of the steering card
 
 
