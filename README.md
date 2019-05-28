@@ -6,6 +6,8 @@ Important options:
 
 * `-d 1` will turn on some debugging messages, `-d 2` will turn on all debugging messages. 
 * `-s` will submit the job(s)  
+* `-t` is useful for testing on local machines that do not run HTCondor or Slurm; it simulates a job submission
+* `-b #` can be used to specify a specific batch number, e.g. `-b 2` will submit scripts from batch #2
 *  `scardfile` : location of the steering card
 
 
