@@ -54,6 +54,15 @@ singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --
 
 [Homepage](https://research.cs.wisc.edu/htcondor/index.html) [Manual](http://research.cs.wisc.edu/htcondor/manual/v8.8/contentsname.html) [HowTos](https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes) [Description and Examples](http://vivaldi.ll.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorSubmitFile)
 
+
+# How to make SubMit.py run from anywhere on a machine:
+1.) add #!/usr/bin/env python2 to top of the SubMit.py file
+2.) cd /usr/bin/ 
+3.) sudo cp /m# /SubMit.py .
+4.) Execute "chmod +x SubMit.py"
+5.) Execute "export PYTHONPATH=/mnt/c/Users/Bobby/Dropbox/Linux/clas12_submit/clas12ocr/" #this allows all SubMit.py to import all needed modules
+
+
 Useful commands:
 ---------------------
 
