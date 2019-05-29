@@ -87,6 +87,14 @@ Useful Commands:
 2. `export PYTHONPATH=/path/to/clas-12-simulations-repo` #this allows all SubMit.py to import all needed modules
 
 
+---------------------
+
+To change file format (ff)
+----------------------------
+
+If files are edited on a windows machine, the ff is ```\r\n```. To change it to the unix ff ```\n``` one can use vi:
+
+```:set ff=unix```
 
 
 
