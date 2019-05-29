@@ -8,6 +8,7 @@ Important options:
 * `-s` will submit the job(s)  
 * `-t` is useful for testing on local machines that do not run HTCondor or Slurm; it simulates a job submission
 * `-b #` can be used to specify a specific batch number, e.g. `-b 2` will submit scripts from batch #2
+* `-w` will write submission scripts to disk
 *  `scardfile` : location of the steering card
 
 
@@ -82,6 +83,8 @@ Useful Commands:
 1.) add `#!/usr/bin/env python2` to top of the SubMit.py file - might need to use "python" instead of "python2", depending on machine
 
 2.) `chmod +x SubMit.py`
+
+Note that steps #1 and #2 are included in the codebase. A user only has to execute steps #3 and #4 below. Please note this has only so far been tested to work on a system running Ubuntu 18.04.
 
 3.) `export PATH=$PATH:/path/to/clas-12-simulations-repo/client/src`
 
