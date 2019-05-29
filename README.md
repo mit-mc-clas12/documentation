@@ -81,15 +81,10 @@ Useful Commands:
 * condor_rm ID
 
 # How to make SubMit.py run from anywhere on a machine:
-1.) add `#!/usr/bin/env python2` to top of the SubMit.py file - might need to use "python" instead of "python2", depending on machine
 
-2.) `chmod +x SubMit.py`
 
-Note that steps #1 and #2 are included in the codebase. A user only has to execute steps #3 and #4 below. Please note this has only so far been tested to work on a system running Ubuntu 18.04.
-
-3.) `export PATH=$PATH:/path/to/clas-12-simulations-repo/client/src`
-
-4.) `export PYTHONPATH=/path/to/clas-12-simulations-repo` #this allows all SubMit.py to import all needed modules
+1. `export PATH=$PATH:/path/to/clas-12-simulations-repo/client/src`
+2. `export PYTHONPATH=/path/to/clas-12-simulations-repo` #this allows all SubMit.py to import all needed modules
 
 
 
