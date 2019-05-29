@@ -9,6 +9,7 @@ Important options:
 * `-t` is useful for testing on local machines that do not run HTCondor or Slurm; it simulates a job submission
 * `-b #` can be used to specify a specific batch number, e.g. `-b 2` will submit scripts from batch #2
 * `-w` will write submission scripts to disk
+* `-m` routes to a MySQL database, if this flag is not included, a default SQLite DB file is assumed
 *  `scardfile` : location of the steering card
 
 
