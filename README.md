@@ -98,3 +98,20 @@ If files are edited on a windows machine, the ff is ```\r\n```. To change it to 
 
 
 
+# MysqlDB on Mac
+
+This package will be dropped in python 3 and higher.
+pip cannot install it anymore.
+Notice that on Mac:
+
+locate mysqlclient
+/usr/local/Cellar/mysql/8.0.16/lib/libmysqlclient.21.dylib
+/usr/local/Cellar/mysql@5.7/5.7.25/lib/libmysqlclient.20.dylib
+
+
+This worked for me on Mojave: 
+
+https://stackoverflow.com/questions/1448429/how-to-install-mysqldb-python-data-access-library-to-mysql-on-mac-os-x
+
+
+I had to make that link (in /mysql@5.7) and manually remove ssl from the compilation directly. After that sudo python setup.py install worked.
