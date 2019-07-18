@@ -1,0 +1,20 @@
+SCARD
+-----
+
+scard using internal generator and container gcard "clas12", see scard_type1.
+
+
+
+SCRIPTS FLOW
+------------
+
+
+Client Submit_py calls:
+
+
+
+
+
+
+
+Server:
