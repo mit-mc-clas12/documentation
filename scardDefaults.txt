@@ -1,0 +1,8 @@
+project:  osg.clas12MC            # project name
+luminosity:  0                    # percent of 10^35 luminosity
+tcurrent: -1.0                    # torus field scale
+pcurrent: -1.0                    # solenoid field scale
+cores_req: 1                      # number of cores to request from node
+mem_req: 2                        # GB of RAM to request from node.
+
+
