@@ -41,7 +41,7 @@ SCRIPTS FLOW
 ------------
 
 
-List of Client Submit_py function called:
+List of Client Submit_py functions called:
 
 
 DB Tables filled:
@@ -52,5 +52,5 @@ DB Tables filled:
 
 
 
-List of Client Submit_batchpy function called:
+List of Server Submit_batch.py functions called:
 
