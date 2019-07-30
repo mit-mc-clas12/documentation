@@ -56,7 +56,7 @@ singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --
 
 # HT Condor
 
-[Homepage](https://research.cs.wisc.edu/htcondor/index.html) [Manual](http://research.cs.wisc.edu/htcondor/manual/v8.8/contentsname.html) [HowTos](https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes) [Description and Examples](http://vivaldi.ll.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorSubmitFile)
+[Homepage](https://research.cs.wisc.edu/htcondor/index.html) [Manual](https://research.cs.wisc.edu/htcondor/manual/) [HowTos](https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes) [Description and Examples](http://vivaldi.ll.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorSubmitFile)
 
 Useful commands:
 ---------------------
