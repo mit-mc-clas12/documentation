@@ -15,12 +15,12 @@ Important options:
 
 # Steering Card
 
-
+Steering card a.k.a. scard contains configuration for running simulation.
+There can be scards with different types.
+e.g., (type1)[submissionTypes/type1.txt] and (type2)[submissionTypes/type2.txt]
 
 
 # Workflow Test
-
-
 Create a dir and clone the repoos:
 * mkdir clas12-test      
 * cd clas12-test   
