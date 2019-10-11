@@ -1,4 +1,7 @@
-# from frontend to simuatlion
+# Frontend
 
-An interactive submission from web is desirable for JLab users who are not familar with off-site farm.
-For now, 
+[https://gemc.jlab.org/web_interface](https://gemc.jlab.org/web_interface)
+
+# Purpose of Project
+
+From frontend to simulation job submission to offsite farms ... TBD
