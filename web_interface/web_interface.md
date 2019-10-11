@@ -8,4 +8,4 @@ From frontend to simulation job submission to offsite farms ... TBD
 
 # Contacts
 
-To ask questions about the project and submission usage, please [email us](contacts.md)
+To ask questions about the project and submission usage, please [email us](contacts.md).
