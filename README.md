@@ -115,3 +115,30 @@ https://stackoverflow.com/questions/1448429/how-to-install-mysqldb-python-data-a
 
 
 I had to make that link (in /mysql@5.7) and manually remove ssl from the compilation directly. After that sudo python setup.py install worked.
+
+
+
+# October 2019 Notes and TODOs
+
+
+## Notes:
+
+
+- the farmSubmissionID and gcard ID should match but sometimes they don't. This should be fixed (or prevented). To temp fix this, change the farmSubmissionID from workbench.
+
+## Short term todos:
+
+- add farm statistic scripts to repo  (Sangbaek)
+- mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run CLARA (David, Mauri)
+- fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
+- the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
+ - we should validate "total number of events" to be a number (Patrick)
+ - collect css style in common between varrious php files  (Sangbaek)
+ - when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
+ - client submit should be agnostic to scard content, just scard type (David)
+ 
+
+## Medium term (1-2 weeks) todos:
+
+- need to have howtos on deleting and re-creating tables on the DB. I tried this and it didn't work for me (I think cause of permissions) (Bobby if possible, otherwise let us know)
+- type 2 work
