@@ -128,32 +128,47 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 ## Short term todos:
 
-- add farm statistic scripts to repo  (Sangbaek)
-- mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run CLARA (David, Mauri)
-- fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
-- the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
- - we should validate "total number of events" to be a number (Patrick)
- - collect css style in common between varrious php files  (Sangbaek)
- - when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
- - client submit should be agnostic to scard content, just scard type (David)
+1. add farm statistic scripts to repo  (Sangbaek)
+2. mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run CLARA (David, Mauri)
+3. fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
+4. the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
+5. we should validate "total number of events" to be a number (Patrick)
+6. collect css style in common between varrious php files  (Sangbaek)
+7. when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
+8. client submit should be agnostic to scard content, just scard type (David)
 
-- gcards: /jlab/clas12Tags/gcards/clas12-default.gcard         # gcard within the container
- becomes: configuration: clas12-default        # gcard within the container
+9. remove path and extension from gcard entry in scard:
 
-- remove batch usage from any documentation / webpage (Mauri)
-- get username from command line if specified (David)
-- web submission should work w/o generator arguments
+ gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
+ becomes: 
+ gcards: clas12-default        
 
-
-
-## Medium term (1-2 weeks) todos:
-
-- need to have howtos on deleting and re-creating tables on the DB. I tried this and it didn't work for me (I think cause of permissions) (Bobby if possible, otherwise let us know)
-- type 2 work
+10. remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
+11. get username from command line if specified (David on the re-org)
+12. web submission should work w/o generator arguments
+13. type 2 working.
 
 
+## Medium term (2-3 weeks) todos:
 
-### Long term: 
+1. need to have howtos on deleting and re-creating tables on the DB. I tried this and it didn't work for me (I think cause of permissions) (Bobby if possible, otherwise let us know)
+2. rename gcards to configurations:
 
-- unit tests (David)
-- python packages (David)
+ gcards: clas12-default                 #  gcard within the container
+ becomes
+ configuration: clas12-default        # experiment configuration
+
+This is because we need the yaml file for reconstruction.
+
+3. add handling scard entries:
+ reconstruct: yes                                      # yes/no choice: reconstruct events 
+ dst: yes                                              # choice: produce dst. "only" will discard the non-dst output
+
+
+
+
+
+## Long term: todos:
+
+1. unit tests (David)
+2. python packages installation rather than importing dirs and files within the same project (David)
