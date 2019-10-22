@@ -136,13 +136,12 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 7. when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
 8. client submit should be agnostic to scard content, just scard type (David)
 
-9. remove path and extension from gcard entry in scard:
+9. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
 
  gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
  becomes: 
  gcards: clas12-default        
 
-10. remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
 11. get username from command line if specified (David on the re-org)
 12. web submission should work w/o generator arguments
 13. type 2 working.
@@ -176,4 +175,4 @@ This is because we need the yaml file for reconstruction.
 
 ## Completed
 4. the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
-
+10. remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
