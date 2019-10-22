@@ -131,7 +131,6 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 1. add farm statistic scripts to repo  (Sangbaek)
 2. mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run CLARA (David, Mauri)
 3. fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
-4. the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
 5. we should validate "total number of events" to be a number (Patrick)
 6. collect css style in common between varrious php files  (Sangbaek)
 7. when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
@@ -161,7 +160,7 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 This is because we need the yaml file for reconstruction.
 
 3. add handling scard entries:
- reconstruct: yes                                      # yes/no choice: reconstruct events 
+ reconstruct: yes                                 # yes/no choice: reconstruct events 
  dst: yes                                              # choice: produce dst. "only" will discard the non-dst output
 
 
@@ -172,3 +171,9 @@ This is because we need the yaml file for reconstruction.
 
 1. unit tests (David)
 2. python packages installation rather than importing dirs and files within the same project (David)
+
+
+
+## Completed
+4. the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
+
