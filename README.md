@@ -160,6 +160,8 @@ This is because we need the yaml file for reconstruction.
  dst: yes                                              # choice: produce dst. "only" will discard the non-dst output
 
 4. Have Submit returns the farmSubmissionID so it can be picked up by the web interface
+5. Catch IP address 
+6. function to return approx location of 5. and display on minimap
 
 
 
