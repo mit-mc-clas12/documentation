@@ -162,6 +162,7 @@ This is because we need the yaml file for reconstruction.
 4. Have Submit returns the farmSubmissionID so it can be picked up by the web interface
 5. Catch IP address 
 6. function to return approx location of 5. and display on minimap
+7. add entry or table to store either ip address or location (or both)
 
 
 
