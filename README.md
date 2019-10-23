@@ -129,22 +129,19 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 ## Short term todos:
 
 1. add farm statistic scripts to repo  (Sangbaek)
-2. mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run CLARA (David, Mauri)
-3. fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
-5. we should validate "total number of events" to be a number (Patrick)
-6. collect css style in common between varrious php files  (Sangbaek)
-7. when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
-8. client submit should be agnostic to scard content, just scard type (David)
+2. we should validate "total number of events" to be a number (Patrick)
+3. client submit should be agnostic to scard content, just scard type (David)
 
-9. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
+4. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
 
  gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
  becomes: 
  gcards: clas12-default        
 
-11. get username from command line if specified (David on the re-org)
-12. web submission should work w/o generator arguments
-13. type 2 working.
+
+5. web submission should work w/o generator arguments
+6. type 2 working.
+
 
 
 ## Medium term (2-3 weeks) todos:
@@ -162,6 +159,7 @@ This is because we need the yaml file for reconstruction.
  reconstruct: yes                                 # yes/no choice: reconstruct events 
  dst: yes                                              # choice: produce dst. "only" will discard the non-dst output
 
+4. Have Submit returns the farmSubmissionID so it can be picked up by the web interface
 
 
 
@@ -174,5 +172,10 @@ This is because we need the yaml file for reconstruction.
 
 
 ## Completed
-4. the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
-10. remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
+- mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run reconstruction (Mauri)
+- fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
+- the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
+- collect css style in common between varrious php files  (Sangbaek)
+- when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
+- remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
+- get username from command line if specified (David on the re-org)
