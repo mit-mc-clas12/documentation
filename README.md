@@ -139,9 +139,9 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
  gcards: clas12-default        
 
 
-5. web submission should work w/o generator arguments
 6. type 2 working.
-7. send email with farm submission ID, out location.
+7. send email with farm submission ID, out location. After job completed? Optional?
+8. web interface gcard name should be username_type#.gcard
 
 
 
@@ -164,6 +164,8 @@ This is because we need the yaml file for reconstruction.
 5. Catch IP address 
 6. function to return approx location of 5. and display on minimap
 7. add entry or table to store either ip address or location (or both)
+8. remove need to write scripts (-w option is currently necessary)
+9. options should be separated and different for client and server, not in utils.
 
 
 
@@ -184,4 +186,5 @@ This is because we need the yaml file for reconstruction.
 - when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
 - remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
 - get username from command line if specified (David on the re-org)
+- web submission work w/o generator arguments
 
