@@ -141,6 +141,7 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 5. web submission should work w/o generator arguments
 6. type 2 working.
+7. send email with farm submission ID, out location.
 
 
 
@@ -171,6 +172,7 @@ This is because we need the yaml file for reconstruction.
 
 1. unit tests (David)
 2. python packages installation rather than importing dirs and files within the same project (David)
+3. configurations file (currently gcard available files in utils) should be shared between client and web interface
 
 
 
@@ -182,3 +184,4 @@ This is because we need the yaml file for reconstruction.
 - when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
 - remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
 - get username from command line if specified (David on the re-org)
+
