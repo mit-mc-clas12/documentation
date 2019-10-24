@@ -142,7 +142,7 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 6. type 2 working.
 7. send email with farm submission ID, out location. After job completed? Optional?
 8. web interface gcard name should be username_type#.gcard
-
+9. add function to show total number of events in thousands or millions (if necessary)
 
 
 ## Medium term (2-3 weeks) todos:
