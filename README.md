@@ -134,10 +134,8 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 ## Short term todos:
 
-1. add farm statistic scripts to repo  (Sangbaek)
-2. we should validate "total number of events" to be a number (Patrick)
+2. we should validate "total number of events" to be a number, and format the number (Patrick)
 3. client submit should be agnostic to scard content, just scard type (David)
-
 4. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
 
  gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
@@ -145,15 +143,19 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
  gcards: clas12-default        
 
 
-6. type 2 working.
 7. send email with farm submission ID, out location. After job completed? Optional?
-8. web interface gcard name should be username_type#.gcard
-9. add function to show total number of events in thousands or millions (if necessary)
+8. web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
+9. add handling scard entries:
+gemc evio:          # yes/no choice:
+gemc decoded   # yes/no choice:
+reconstructed     # yes/no choice:
+dst: yes               # yes/no choice:
+
 
 
 ## Medium term (2-3 weeks) todos:
 
-1. need to have howtos on deleting and re-creating tables on the DB. I tried this and it didn't work for me (I think cause of permissions) (Bobby if possible, otherwise let us know)
+1. need to have howtos on deleting and re-creating tables on the DB. I tried this and it didn't work for me (I think cause of permissions) (Mauri verify with Marty)
 2. rename gcards to configurations:
 
  gcards: clas12-default                 #  gcard within the container
@@ -162,9 +164,6 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 This is because we need the yaml file for reconstruction.
 
-3. add handling scard entries:
- reconstruct: yes                                 # yes/no choice: reconstruct events 
- dst: yes                                              # choice: produce dst. "only" will discard the non-dst output
 
 4. Have Submit returns the farmSubmissionID so it can be picked up by the web interface
 5. Catch IP address 
@@ -196,4 +195,5 @@ This is because we need the yaml file for reconstruction.
 - remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
 - get username from command line if specified (David on the re-org)
 - web submission work w/o generator arguments
-
+- add farm statistic scripts to repo  (Sangbaek)
+- type 2 working.
