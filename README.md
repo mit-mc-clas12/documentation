@@ -54,6 +54,12 @@ singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --
 # Open Science Grid
 [HomePage](https://support.opensciencegrid.org/support/home) [Grid Accounting](https://gracc.opensciencegrid.org/dashboard/db/gracc-home) 
 
+Apparently submission from scosg16 do not automatically use JLAB VO but OSG VO whcih will go to the opportunistic pool. 
+Only when we go to Glasgow we use the JLAB VO?
+
+
+
+
 # HT Condor
 
 [Homepage](https://research.cs.wisc.edu/htcondor/index.html) [Manual](https://research.cs.wisc.edu/htcondor/manual/) [HowTos](https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes) [Description and Examples](http://vivaldi.ll.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorSubmitFile)
@@ -166,6 +172,8 @@ This is because we need the yaml file for reconstruction.
 7. add entry or table to store either ip address or location (or both)
 8. remove need to write scripts (-w option is currently necessary)
 9. options should be separated and different for client and server, not in utils.
+10. standardize generator options documentation
+11. show or make available options of the software versions inside the container
 
 
 
@@ -175,6 +183,7 @@ This is because we need the yaml file for reconstruction.
 1. unit tests (David)
 2. python packages installation rather than importing dirs and files within the same project (David)
 3. configurations file (currently gcard available files in utils) should be shared between client and web interface
+4. ability to cancel job 
 
 
 
