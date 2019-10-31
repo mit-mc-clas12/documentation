@@ -1,0 +1,8 @@
+project:  CLAS12      #
+group: RGB        #
+farm_name: OSG        #
+gcards: /jlab/clas12Tags/gcards/rga-fall2018.gcard         #
+genOptions: -BEAM_P="proton, 4.0*GeV, 20.0*deg, 10*deg" #
+generator: gemc   #
+nevents: 100       #
+jobs: 2             #
