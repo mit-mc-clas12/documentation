@@ -1,0 +1,5 @@
+project:  CLAS12      #
+group: RGA        #
+farm_name: OSG        #
+gcards: /jlab/clas12Tags/gcards/rga-fall2018.gcard         #
+generator: https://userweb.jlab.org/~ungaro/lund/   #

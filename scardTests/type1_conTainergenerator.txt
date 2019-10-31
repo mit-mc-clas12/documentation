@@ -1,0 +1,8 @@
+project:  CLAS12      #
+group: RGB        #
+farm_name: OSG        #
+gcards: /jlab/clas12Tags/gcards/rga-fall2018.gcard         #
+genOptions: --t 13 23 #
+generator: clasdis   #
+nevents: 100       #
+jobs: 2             #
