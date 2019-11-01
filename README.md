@@ -146,10 +146,11 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 7. send email with farm submission ID, out location. After job completed? Optional?
 8. web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
 9. add handling scard entries:
-gemc evio:          # yes/no choice:
-gemc decoded   # yes/no choice:
-reconstructed     # yes/no choice:
-dst: yes               # yes/no choice:
+generated:          # yes/no choice
+gemc evio:          # yes/no choice
+gemc decoded   # yes/no choice
+reconstructed     # yes/no choice
+dst: yes               # yes/no choice
 
 
 
@@ -173,6 +174,7 @@ This is because we need the yaml file for reconstruction.
 9. options should be separated and different for client and server, not in utils.
 10. standardize generator options documentation
 11. show or make available options of the software versions inside the container
+12. support lund gzipped files (easy, can add a script to unzip anything that has .gz) (Mauri)
 
 
 
