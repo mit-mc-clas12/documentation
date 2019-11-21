@@ -13,6 +13,16 @@ Important options:
 *  `scardfile` : location of the steering card
 
 
+# Mysql 
+
+To make copy of DB:
+
+`mysqldump -h jsubmit.jlab.org -u robertej -p CLAS12OCR | mysql -h jsubmit.jlab.org -u robertej -p clas12Backup`
+
+
+
+
+
 # Steering Card
 
 Steering card a.k.a. scard contains configuration for running simulation.
@@ -199,3 +209,17 @@ This is because we need the yaml file for reconstruction.
 - web submission work w/o generator arguments
 - add farm statistic scripts to repo  (Sangbaek)
 - type 2 working.
+
+
+
+
+# Supporting Packages:
+
+- there is no need to convert hipo files to root to do analysis in c++/root;
+- supporting multiple formats for the same files is a waste of resources we cannot afford;
+- for simulation, we encourage the physics WG to organize production campaigns to produce 
+   significant statistics that could be shared among analyzers and for that we recommend saving hipo DSTs;
+- conversion to other formats is possible even if not encouraged but cannot be supported with centralized resources;
+- in case collaborators feels the conversion to other formats is necessary for their analysis, we strongly recommend 
+   the groups interested in similar file formats to discuss and agree on the tool to use for the conversion  
+   and the structure of the converted files to avoid further duplication.
