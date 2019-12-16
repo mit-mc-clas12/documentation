@@ -144,29 +144,26 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 ## Short term todos:
 
-2. we should validate "total number of events" to be a number, and format the number (Patrick)
-3. client submit should be agnostic to scard content, just scard type (David)
-4. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
+1. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
 
  gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
  becomes: 
  gcards: clas12-default        
 
 
-7. send email with farm submission ID, out location. After job completed? Optional?
-8. web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
-9. add handling scard entries:
-generated:          # yes/no choice
-gemc evio:          # yes/no choice
-gemc decoded   # yes/no choice
-reconstructed     # yes/no choice
-dst: yes               # yes/no choice
+2. web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
+3. standardize generator options documentation
+4. support lund gzipped files (easy, can add a script to unzip anything that has .gz) (Mauri)
+5. ability to cancel job 
+6. ability to remove job_out
+7. abilit to add suffix to output dir
+8. log off users after certain amount of time
 
 
 
-## Medium term (2-3 weeks) todos:
+## Medium term todos:
 
-1. need to have howtos on deleting and re-creating tables on the DB. I tried this and it didn't work for me (I think cause of permissions) (Mauri verify with Marty)
+1. need to have howtos on deleting and re-creating tables on the DB.
 2. rename gcards to configurations:
 
  gcards: clas12-default                 #  gcard within the container
@@ -175,41 +172,47 @@ dst: yes               # yes/no choice
 
 This is because we need the yaml file for reconstruction.
 
-
-4. Have Submit returns the farmSubmissionID so it can be picked up by the web interface
-5. Catch IP address 
-6. function to return approx location of 5. and display on minimap
-7. add entry or table to store either ip address or location (or both)
-8. remove need to write scripts (-w option is currently necessary)
-9. options should be separated and different for client and server, not in utils.
-10. standardize generator options documentation
-11. show or make available options of the software versions inside the container
-12. support lund gzipped files (easy, can add a script to unzip anything that has .gz) (Mauri)
+3. Have Submit returns the farmSubmissionID so it can be picked up by the web interface, display feedback message
+4. function to return approx location of 5. and display on minimap
+5. options should be separated and different for client and server, not in utils.
+6. show or make available options of the software versions inside the container
 
 
 
 
-## Long term: todos:
+## Long term todos:
 
 1. unit tests (David)
 2. python packages installation rather than importing dirs and files within the same project (David)
 3. configurations file (currently gcard available files in utils) should be shared between client and web interface
-4. ability to cancel job 
+3. send email with farm submission ID, out location. 
+4. monitor job statistics (memory, completion, resource usage)
 
 
 
 ## Completed
 - mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run reconstruction (Mauri)
-- fix allowed container gcards, currently only 1 in fs.py (default)  (David?)
-- the main page sidebar menu is eye candy but not handy for navigation. Can we have either top navigation bar or bottom? It should be the same for index.php and the various types.html. (Sangbaek)
+- fix allowed container gcards, currently only 1 in fs.py (default)  
+- replaced the main page sidebar menu
+- uniforming style for all php and html 
 - collect css style in common between varrious php files  (Sangbaek)
-- when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table."  (Sangbaek)
-- remove batch usage from any documentation / webpage (Mauri). Looks like the web interface can handle all.
-- get username from command line if specified (David on the re-org)
+- when "submit" is pressed, add directory output message like: "Output and logs will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table." 
+- limit use to web submission, not using the scripts. Remove any doc references. 
+- client: get username from command line if specified
 - web submission work w/o generator arguments
 - add farm statistic scripts to repo  (Sangbaek)
 - type 2 working.
-
+- add handling scard entries:
+	generated:          # yes/no choice
+	gemc evio:          # yes/no choice
+	gemc decoded   # yes/no choice
+	reconstructed     # yes/no choice
+	dst: yes               # yes/no choice
+- "total number of events" validated be a number, and formatted 
+- client submit agnostic to scard content, just scard type (David)
+- Catch IP address 
+- add entry or table to store either ip address or location (or both)
+- remove need to write scripts (-w option is currently necessary)
 
 
 
