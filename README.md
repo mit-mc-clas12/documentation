@@ -69,6 +69,33 @@ Only when we go to Glasgow we use the JLAB VO?
 
 
 
+# mysql backup:
+
+two steps because we need to enter PW twice
+
+mysqldump -h jsubmit.jlab.org -u ungaro -p CLAS12OCR > d.back
+
+cat d.back | mysql -h jsubmit.jlab.org -u ungaro -p clas12Backup
+
+note: when running python utils/create_database.py the credentials in msqlrw.txt should be the ones of the user that created the DB
+
+
+# Scripts to be installed in utils and ran as cronjob:
+
+~ungaro:  updateSubmit.sh, volatileQuery.sh, osgQuery.sh
+~gemc:    gemcSubmitCron.sh
+
+# Release Cycle:
+
+1. script testRelease  will install everything inside a "test" directories on  /web_interface and /group and copy indexMaintanance.php to index.php
+2. need to copy the files from 	cp /u/group/clas/www/gemc/html/web_interface/stats_results/* to the new stats_results. Notice: sym links will not work
+3. copy mysql perm files in ../Submit
+3. alter table CLAS12OCR.submissions auto_increment = 220;
+3. change osgQuery or use the test version to pick up the correct directory
+3. update permission so gemc can write
+3. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server
+4. after test: installRelease  will remove test and install all relevant files  on  /web_interface and /group
+
 
 # HT Condor
 
@@ -95,6 +122,11 @@ User History:
 
 Useful Commands:
 * condor_rm ID
+
+
+* Condor Hold:
+condor_hold -constraint 'ClusterId == N && ProcId >= 5000'
+
 
 # How to make SubMit.py run from anywhere on a machine:
 
@@ -161,6 +193,7 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 
 
+
 ## Medium term todos:
 
 1. need to have howtos on deleting and re-creating tables on the DB.
@@ -176,6 +209,10 @@ This is because we need the yaml file for reconstruction.
 4. function to return approx location of 5. and display on minimap
 5. options should be separated and different for client and server, not in utils.
 6. show or make available options of the software versions inside the container
+7. error message if writing scard was not successful
+8. error if pool node doesn't make sense - in that case do not mark as submitted
+9. change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
+10. delete run_job_text
 
 
 
