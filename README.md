@@ -90,11 +90,12 @@ note: when running python utils/create_database.py the credentials in msqlrw.txt
 1. script testRelease  will install everything inside a "test" directories on  /web_interface and /group and copy indexMaintanance.php to index.php
 2. need to copy the files from 	cp /u/group/clas/www/gemc/html/web_interface/stats_results/* to the new stats_results. Notice: sym links will not work
 3. copy mysql perm files in ../Submit
-3. alter table CLAS12OCR.submissions auto_increment = 220;
-3. change osgQuery or use the test version to pick up the correct directory
-3. update permission so gemc can write
-3. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server
-4. after test: installRelease  will remove test and install all relevant files  on  /web_interface and /group
+4. alter table CLAS12OCR.submissions auto_increment = 220;
+5. copy users tables into new one 
+6. change osgQuery or use the test version to pick up the correct directory
+7. update permission so gemc can write
+8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server
+9. after test: installRelease  will remove test and install all relevant files  on  /web_interface and /group
 
 
 # HT Condor
@@ -190,6 +191,8 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 6. ability to remove job_out
 7. abilit to add suffix to output dir
 8. log off users after certain amount of time
+9. remove domain_name, submissions and total events from user table
+10. remove run_job_text from submissions table
 
 
 
