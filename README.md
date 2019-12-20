@@ -103,7 +103,8 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 6. change osgQuery or use the test version to pick up the correct directory
 7. update permission so gemc can write
 8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server
-9. after test: installRelease  will remove test and install all relevant files  on  /web_interface and /group
+9. after our test: undo changes to index.php and run updateSubmit.sh. this is the  "official release"
+10. after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept)
 
 
 # HT Condor
