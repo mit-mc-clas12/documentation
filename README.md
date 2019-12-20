@@ -80,6 +80,14 @@ cat d.back | mysql -h jsubmit.jlab.org -u ungaro -p clas12Backup
 note: when running python utils/create_database.py the credentials in msqlrw.txt should be the ones of the user that created the DB
 
 
+
+add column:
+
+alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas12_condor_text;
+
+
+
+
 # Scripts to be installed in utils and ran as cronjob:
 
 ~ungaro:  updateSubmit.sh, volatileQuery.sh, osgQuery.sh
@@ -127,6 +135,8 @@ Useful Commands:
 
 * Condor Hold:
 condor_hold -constraint 'ClusterId == N && ProcId >= 5000'
+You can also "test" the constraint with condor_q first. condor_q and 
+condor_hold takes the same -const argument.
 
 
 # How to make SubMit.py run from anywhere on a machine:
@@ -189,17 +199,15 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 4. support lund gzipped files (easy, can add a script to unzip anything that has .gz) (Mauri)
 5. ability to cancel job 
 6. ability to remove job_out
-7. abilit to add suffix to output dir
+7. ability to add suffix to output dir
 8. log off users after certain amount of time
-9. remove domain_name, submissions and total events from user table
-10. remove run_job_text from submissions table
 
 
 
 
 ## Medium term todos:
 
-1. need to have howtos on deleting and re-creating tables on the DB.
+1. docs howtos on deleting and re-creating tables on the DB.
 2. rename gcards to configurations:
 
  gcards: clas12-default                 #  gcard within the container
@@ -208,14 +216,13 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 
 This is because we need the yaml file for reconstruction.
 
-3. Have Submit returns the farmSubmissionID so it can be picked up by the web interface, display feedback message
-4. function to return approx location of 5. and display on minimap
-5. options should be separated and different for client and server, not in utils.
+4. function to return approx location of submission using ip address and display on minimap
+5. options should be separated and different for client and server, not common in utils?
 6. show or make available options of the software versions inside the container
 7. error message if writing scard was not successful
 8. error if pool node doesn't make sense - in that case do not mark as submitted
 9. change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
-10. delete run_job_text
+11. remove "#" from the scard in mysql (note: this may break things?)
 
 
 
@@ -253,6 +260,9 @@ This is because we need the yaml file for reconstruction.
 - Catch IP address 
 - add entry or table to store either ip address or location (or both)
 - remove need to write scripts (-w option is currently necessary)
+- remove domain_name, submissions and total events from user table
+- remove run_job_text from submissions table
+- Have Submit returns the farmSubmissionID so it can be picked up by the web interface, display feedback message
 
 
 
