@@ -54,11 +54,11 @@ Create the DB, client submit one job and server reads the unsubmitted jobs, then
 
 # Singularity Image
 
-* cvmfs path: ```/cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12simulations:production```
+* cvmfs path: ```/cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12software:production```
 
 To run the singularity image:
 ```
-singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --pid /cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12simulations:production
+singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --pid /cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12software:production
 ```
 
 
@@ -120,7 +120,7 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 7. update permission so gemc can write : stats directories? 
 8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server - or give optional arguments?
 
-- after tests: undo changes to index.php and run updateSubmit.sh. this is the  "official release"
+- after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release"
 - after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept) < don't do this yet
 
 

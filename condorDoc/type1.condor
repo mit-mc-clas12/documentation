@@ -4,7 +4,7 @@
 Universe = vanilla
 
 # singularity image and CVMFS binding
-+SingularityImage = '/cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12simulations:production'
++SingularityImage = '/cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12software:production'
 
 # OSG Requirements
 Requirements = HAS_SINGULARITY == TRUE
