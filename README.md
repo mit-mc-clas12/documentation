@@ -91,29 +91,37 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 
 
 
-# Scripts to be installed in utils and ran as cronjob:
+# Scripts to be installed in utils and ran as cronjob (on scosg16.jlab.org):
 
 
-~ungaro:  updateSubmit.sh, volatileQuery.sh, osgQuery.sh
-~gemc:    gemcSubmitCron.sh
+#~ungaro:  volatileQuery.sh, osgQuery.sh
+~ungaro:  osgQuery.sh
+~gemc:    gemcSubmitCron.sh priorityCron.sh
 
 
 
 # Release Cycle:
 
 
-- edit indexMaintanance.php
-- script testRelease will install everything inside a "test" directories on  /web_interface and /group and copy indexMaintanance.php to index.php
+- edit indexMaintanance.php with new message, push it to repo 
+- run script utils/testRelease to: 
+	- clone repos  inside a "test" directories on /group/clas/www/gemc/html and /group/clas12/SubMit/
+	- copy indexMaintanance.php to index.php
+	- copy stats files into test dir
+	- copy permissions files into test dir
 
-2. need to copy the files from 	cp /u/group/clas/www/gemc/html/web_interface/stats_results/* to the new stats_results. Notice: sym links will not work
-3. copy mysql perm files in ../Submit
-4. alter table CLAS12OCR.submissions auto_increment = 220;
-5. copy users tables into new one 
-6. change osgQuery or use the test version to pick up the correct directory
-7. update permission so gemc can write
-8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server
-9. after our test: undo changes to index.php and run updateSubmit.sh. this is the  "official release"
-10. after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept)
+- If mysql table are changed:
+
+	- alter table CLAS12OCR.submissions auto_increment = 220;
+	- copy users tables into new one 
+
+- change osgQuery or use the test version to pick up the correct directory. Change to: use osgQuery test, or give optional arguments?
+
+7. update permission so gemc can write : stats directories? 
+8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server - or give optional arguments?
+
+- after tests: undo changes to index.php and run updateSubmit.sh. this is the  "official release"
+- after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept) < don't do this yet
 
 
 
@@ -202,22 +210,25 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 		becomes: 
 		gcards: clas12-default        
 
-2. web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
-3. support lund gzipped files (easy, can add a script to unzip anything that has .gz)
-4. ability to cancel job 
-5. ability to remove job_out
-6. ability to add suffix to output dir
+- web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
+- support lund gzipped files (easy, can add a script to unzip anything that has .gz)
+- ability to cancel job 
+- ability to remove job_out
+- ability to add suffix to output dir
 
 
 ## Medium term todos:
 
-1. function to return approx location of submission using ip address and display on minimap
-2. options should be separated and different for client and server, not common in utils?
-3. show or make available options of the software versions inside the container
-4. error message if writing scard was not successful
-5. error if pool node doesn't make sense - in that case do not mark as submitted
-6. change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
-7. remove "#" from the scard in mysql (note: this may break things?)
+- function to return approx location of submission using ip address and display on minimap
+- options should be separated and different for client and server, not common in utils?
+- show or make available options of the software versions inside the container
+- error message if writing scard was not successful
+- error if pool node doesn't make sense - in that case do not mark as submitted
+- change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
+- remove "#" from the scard in mysql (note: this may break things?)
+- add a test for each single generators
+
+
 
 
 ## Long term todos:
