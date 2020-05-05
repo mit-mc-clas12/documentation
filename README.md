@@ -61,6 +61,9 @@ To run the singularity image:
 singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --pid /cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12simulations:production
 ```
 
+
+
+
 # Open Science Grid
 [HomePage](https://support.opensciencegrid.org/support/home) [Grid Accounting](https://gracc.opensciencegrid.org/dashboard/db/gracc-home) 
 
@@ -90,12 +93,18 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 
 # Scripts to be installed in utils and ran as cronjob:
 
+
 ~ungaro:  updateSubmit.sh, volatileQuery.sh, osgQuery.sh
 ~gemc:    gemcSubmitCron.sh
 
+
+
 # Release Cycle:
 
-1. script testRelease  will install everything inside a "test" directories on  /web_interface and /group and copy indexMaintanance.php to index.php
+
+- edit indexMaintanance.php
+- script testRelease will install everything inside a "test" directories on  /web_interface and /group and copy indexMaintanance.php to index.php
+
 2. need to copy the files from 	cp /u/group/clas/www/gemc/html/web_interface/stats_results/* to the new stats_results. Notice: sym links will not work
 3. copy mysql perm files in ../Submit
 4. alter table CLAS12OCR.submissions auto_increment = 220;
@@ -105,6 +114,10 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server
 9. after our test: undo changes to index.php and run updateSubmit.sh. this is the  "official release"
 10. after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept)
+
+
+
+
 
 
 # HT Condor
@@ -181,64 +194,45 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 # October 2019 Notes and TODOs
 
 
-## Notes:
-
-
-- the farmSubmissionID and gcard ID should match but sometimes they don't. This should be fixed (or prevented). To temp fix this, change the farmSubmissionID from workbench.
-
 ## Short term todos:
 
 1. remove path and extension from gcard entry in scard. Currently the valid gcards needs argument as well
 
- gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
- becomes: 
- gcards: clas12-default        
-
+		gcards: /jlab/clas12Tags/gcards/clas12-default.gcard        
+		becomes: 
+		gcards: clas12-default        
 
 2. web interface gcard name should be username_type#.scard (after submission it can be moved to username_#farmSubmissionID_type#.scard)
-3. standardize generator options documentation
-4. support lund gzipped files (easy, can add a script to unzip anything that has .gz) (Mauri)
-5. ability to cancel job 
-6. ability to remove job_out
-7. ability to add suffix to output dir
-8. log off users after certain amount of time
-
-
+3. support lund gzipped files (easy, can add a script to unzip anything that has .gz)
+4. ability to cancel job 
+5. ability to remove job_out
+6. ability to add suffix to output dir
 
 
 ## Medium term todos:
 
-1. docs howtos on deleting and re-creating tables on the DB.
-2. rename gcards to configurations:
-
- gcards: clas12-default                 #  gcard within the container
- becomes
- configuration: clas12-default        # experiment configuration
-
-This is because we need the yaml file for reconstruction.
-
-4. function to return approx location of submission using ip address and display on minimap
-5. options should be separated and different for client and server, not common in utils?
-6. show or make available options of the software versions inside the container
-7. error message if writing scard was not successful
-8. error if pool node doesn't make sense - in that case do not mark as submitted
-9. change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
-11. remove "#" from the scard in mysql (note: this may break things?)
-
-
+1. function to return approx location of submission using ip address and display on minimap
+2. options should be separated and different for client and server, not common in utils?
+3. show or make available options of the software versions inside the container
+4. error message if writing scard was not successful
+5. error if pool node doesn't make sense - in that case do not mark as submitted
+6. change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
+7. remove "#" from the scard in mysql (note: this may break things?)
 
 
 ## Long term todos:
 
-1. unit tests (David)
-2. python packages installation rather than importing dirs and files within the same project (David)
+1. unit tests 
+2. python packages installation rather than importing dirs and files within the same project
 3. configurations file (currently gcard available files in utils) should be shared between client and web interface
 3. send email with farm submission ID, out location. 
 4. monitor job statistics (memory, completion, resource usage)
 
 
-
 ## Completed
+- standardize generator options documentation
+- log off users after certain amount of time
+- the farmSubmissionID and gcard ID should match but sometimes they don't. This should be fixed (or prevented). To temp fix this, change the farmSubmissionID from workbench.
 - mechanism to pass the configuration (rga-fall18, etc) to the runscript generators. This is needed to run reconstruction (Mauri)
 - fix allowed container gcards, currently only 1 in fs.py (default)  
 - replaced the main page sidebar menu
