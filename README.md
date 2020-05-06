@@ -129,9 +129,9 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 
 8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server - or give optional arguments?
 
-- after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release"
+- after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release". Change this to run installRelease with argument.
 - after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept) < don't do this yet
-
+- document the new versions releases in about.html
 
 
 
@@ -239,6 +239,8 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 - test release cycle and perfect it
 - ability to add suffix to output dir
 - change testRelease to the Submit line has the debug more (for example to use CLAS12OCR)
+- priority page
+- priority form
 
 
 ## Long term todos:
@@ -292,3 +294,32 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 - in case collaborators feels the conversion to other formats is necessary for their analysis, we strongly recommend 
    the groups interested in similar file formats to discuss and agree on the tool to use for the conversion  
    and the structure of the converted files to avoid further duplication.
+
+
+
+
+## Messages for maintenance
+
+Dear all,
+
+The CLAS12 OSG portal will undergo maintenance today starting at 3pm to upgrade the singularity container to include:
+
+Clas12tags 4.3.2
+Coatjava 6.5.3
+
+All jobs submitted before 3pm will still run on OSG normally but it won’t be possible to submit new ones.
+The maintenance will last a few hours.
+
+Regards,
+Mauri
+
+Dear all,
+
+
+The CLAS12 OSG portal is back online. The new container has:
+
+Clas12tags 4.3.2
+Coatjava 6.5.3
+
+Regards,
+Mauri
