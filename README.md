@@ -19,7 +19,9 @@ To make copy of DB:
 
 `mysqldump -h jsubmit.jlab.org -u robertej -p CLAS12OCR | mysql -h jsubmit.jlab.org -u robertej -p clas12Backup`
 
+to run with files:
 
+mysql --defaults-extra-file=msql_conn.txt -N -s --execute="SELECT scard from CLAS12OCR.submissions where user_submission_id=221;" | grep gcard
 
 
 
@@ -104,11 +106,19 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 
 
 - edit indexMaintanance.php with new message, push it to repo 
-- run script utils/testRelease to: 
+- cd /group/clas/www/gemc/html and run testRelease.sh to:
+
 	- clone repos  inside a "test" directories on /group/clas/www/gemc/html and /group/clas12/SubMit/
 	- copy indexMaintanance.php to index.php
 	- copy stats files into test dir
 	- copy permissions files into test dir
+	- update permission so gemc can write on the various dirs
+	
+	At this point submitting jobs will:
+	
+	- write the scard in /u/group/clas/www/gemc/html/test/web_interface
+	- run Submit.py to upload the new entry to the DB. Notice: this should be 
+
 
 - If mysql table are changed:
 
@@ -117,7 +127,6 @@ alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas
 
 - change osgQuery or use the test version to pick up the correct directory. Change to: use osgQuery test, or give optional arguments?
 
-7. update permission so gemc can write : stats directories? 
 8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server - or give optional arguments?
 
 - after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release"
@@ -214,7 +223,7 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 - support lund gzipped files (easy, can add a script to unzip anything that has .gz)
 - ability to cancel job 
 - ability to remove job_out
-- ability to add suffix to output dir
+
 
 
 ## Medium term todos:
@@ -227,8 +236,9 @@ I had to make that link (in /mysql@5.7) and manually remove ssl from the compila
 - change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
 - remove "#" from the scard in mysql (note: this may break things?)
 - add a test for each single generators
-
-
+- test release cycle and perfect it
+- ability to add suffix to output dir
+- change testRelease to the Submit line has the debug more (for example to use CLAS12OCR)
 
 
 ## Long term todos:
