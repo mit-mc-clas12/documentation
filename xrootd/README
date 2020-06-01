@@ -1,0 +1,27 @@
+# xrootd
+
+On sci-xrootd.jlab.org : /osgpool/hallb/
+
+On CUE machines:
+/work/osgpool/hallb/ is rsync'ed (with delete) to the server every 4hrs.
+
+On-site:
+setenv LD_PRELOAD /usr/lib64/libXrdPosixPreload.so
+ls xroot://sci-xrootd-ib//osgpool/hallb/
+
+Off-site:
+setenv LD_PRELOAD <path-to-lib>/libXrdPosixPreload.so
+ls xroot://sci-xrootd.jlab.org//osgpool/hallb/
+
+
+# Background merging files
+
+They are on  /work/osgpool/hallb/clas12/backgroundfiles/
+
+The structure:
+
+- Each top dir is an experiment configuration
+- Each configuration contains a list of possible fields combinations
+- Each field configurations contains a list of possible beam current / energy configurations
+
+
