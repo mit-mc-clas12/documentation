@@ -2,39 +2,71 @@
 
 https://gemc.jlab.org/test/web_interface/index.php
 
+- The server should be accessible to OSG team only.
+- It mimics the production server, but using another database.
+- It can have extra infos useful for debugging the production or the test DB
 
 
 
+## Locations:
 
-# Release Cycle:
+/group/clas/www/gemc/html/test/web_interface
+
+Subdirs:
+- web_interface
+- SubMit/client
+- SubMit/utils
+
+
+/group/clas12/SubMit/test
+Subdirs:
+- SubMit/server
+- SubMit/utils
+
+
+
+	TODO:
+	- run Submit.py to upload the new entry to the test DB.
+	- modify gemcSubmitCron script (option parameter), reading from test DB, to submit to OSG
+
+
+
+# Complete Release Cycle:
 
 
 - edit indexMaintanance.php with new message, push it to repo
-- cd /group/clas/www/gemc/html and run testRelease.sh to:
+- on repo, run testRelease.sh from /group/clas12/SubMit/utils/shScripts. This will:
 
-	- clone repos  inside a "test" directories on /group/clas/www/gemc/html and /group/clas12/SubMit/
+
+	- clone/pull repos to test dir in /group/clas/www/gemc/html
+	- clone/pull repos to test dir in /group/clas12/SubMit/t
 	- copy indexMaintanance.php to index.php
 	- copy stats files into test dir
-	- copy permissions files into test dir
-	- update permission so gemc can write on the various dirs
+	- copy sql permissions files into test dir
+	- update permission so gemc user can write on the various dirs
 
-	At this point submitting jobs will:
+
+
+At this point submitting jobs will:
 
 	- write the scard in /u/group/clas/www/gemc/html/test/web_interface
-	- run Submit.py to upload the new entry to the DB. Notice: this should be
+
+
+- after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release". Change this to run installRelease with argument.
+
+
+
+# Tips:
 
 
 - If mysql table are changed:
 
+	- mysql backup
 	- alter table CLAS12OCR.submissions auto_increment = 220;
 	- copy users tables into new one
 
-- change osgQuery or use the test version to pick up the correct directory. Change to: use osgQuery test, or give optional arguments?
 
-8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server - or give optional arguments?
 
 - after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release". Change this to run installRelease with argument.
-- after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept) < don't do this yet
-- document the new versions releases in about.html
 
 

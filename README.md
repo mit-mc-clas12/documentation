@@ -290,4 +290,12 @@ Clas12tags 4.3.2
 Coatjava 6.5.3
 
 Regards,
-Mauri
+The Clas12 OSG Team
+
+
+# Getting Farm Statistics from Existing Options
+
+* JLab Batch Farm: /site/scicomp/auger-slurm/bin/slurmHosts
+* OSG: condor_status -pool flock.opensciencegrid.org at scosg16
+* MIT: condor_status -pool t3serv007.mit.edu:11000?sock=collector
+
