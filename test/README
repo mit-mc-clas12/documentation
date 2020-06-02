@@ -1,0 +1,40 @@
+# Test Server:
+
+https://gemc.jlab.org/test/web_interface/index.php
+
+
+
+
+
+# Release Cycle:
+
+
+- edit indexMaintanance.php with new message, push it to repo
+- cd /group/clas/www/gemc/html and run testRelease.sh to:
+
+	- clone repos  inside a "test" directories on /group/clas/www/gemc/html and /group/clas12/SubMit/
+	- copy indexMaintanance.php to index.php
+	- copy stats files into test dir
+	- copy permissions files into test dir
+	- update permission so gemc can write on the various dirs
+
+	At this point submitting jobs will:
+
+	- write the scard in /u/group/clas/www/gemc/html/test/web_interface
+	- run Submit.py to upload the new entry to the DB. Notice: this should be
+
+
+- If mysql table are changed:
+
+	- alter table CLAS12OCR.submissions auto_increment = 220;
+	- copy users tables into new one
+
+- change osgQuery or use the test version to pick up the correct directory. Change to: use osgQuery test, or give optional arguments?
+
+8. update    gemcSubmitCron.sh (or create gemcSubmitCronTest.sh)  	cd /group/clas12/SubMit/test/SubMit/server - or give optional arguments?
+
+- after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release". Change this to run installRelease with argument.
+- after user tests: tag the files, and use intallRelease to install it (this will delete everything, make sure stats_results is kept) < don't do this yet
+- document the new versions releases in about.html
+
+
