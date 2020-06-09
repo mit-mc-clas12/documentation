@@ -40,7 +40,7 @@ Subdirs:
 
 
 	- clone/pull repos to test dir in /group/clas/www/gemc/html
-	- clone/pull repos to test dir in /group/clas12/SubMit/t
+	- clone/pull repos to test dir in /group/clas12/SubMit/
 	- copy indexMaintanance.php to index.php
 	- copy stats files into test dir
 	- copy sql permissions files into test dir
