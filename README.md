@@ -139,6 +139,8 @@ If files are edited on a windows machine, the ff is ```\r\n```. To change it to 
 - support lund gzipped files (easy, can add a script to unzip anything that has .gz)
 - ability to cancel job 
 - ability to remove job_out
+- ability to remove lund from output
+
 
 
 
