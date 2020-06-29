@@ -4,8 +4,13 @@ condor status to see jobs pilots destination:
 condor_status -af GLIDEIN_SITE | sort | uniq -c
 
 
-
 total for the different Run Projects
 condor_q -name scosg16.jlab.org -af ProjectName -const 'JobStatus=?=2' | sort | uniq -c
    3375 CLAS12
    2354 GLUEX
+
+
+To extend timeout:
+
+set _CONDOR_TOOL_TIMEOUT_MULTIPLIER=100
+before running condor_q or any condor commands
