@@ -56,9 +56,11 @@ Apparently submission from scosg16 do not automatically use JLAB VO but OSG VO w
 Only when we go to Glasgow we use the JLAB VO?
 
 
-Help: osg-contact@opensciencegrid.org, help@opensciencegrid.org
+Help: help@opensciencegrid.org
+
 https://opensciencegrid.org/contact
 
+OSG Contacts: https://topology.opensciencegrid.org/contacts
 
 # Scripts to be installed in utils and ran as cronjob (on scosg16.jlab.org):
 

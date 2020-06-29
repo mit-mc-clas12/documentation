@@ -1,0 +1,11 @@
+
+condor status to see jobs pilots destination:
+
+condor_status -af GLIDEIN_SITE | sort | uniq -c
+
+
+
+total for the different Run Projects
+condor_q -name scosg16.jlab.org -af ProjectName -const 'JobStatus=?=2' | sort | uniq -c
+   3375 CLAS12
+   2354 GLUEX
