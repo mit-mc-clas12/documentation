@@ -14,3 +14,14 @@ To extend timeout:
 
 set _CONDOR_TOOL_TIMEOUT_MULTIPLIER=100
 before running condor_q or any condor commands
+
+
+
+To make sure we get enough disk space:
+
+as gemc on scosg16 condor_qedit -const 'RequestDisk=?=1' RequestDisk 1000000
+
+One kb means the job says “I need 1 kb” and the node says okay I got that.
+Then either the job begins transferring more than 1 kb or produces more than 1 kb and the node goes: “stop it you dirty liar job…..I’m evicting you!”.
+The job goes “oh okay…..so anybody have 1 kb of disk space for me” *cue a clamor of yeses*
+
