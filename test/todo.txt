@@ -1,0 +1,5 @@
+
+TODO:
+- run Submit.py to upload the new entry to the test DB.
+- modify Submit_UserSubmission script (option parameter), reading from test DB, to submit to OSG
+- modify monitoring script to use the test directory as output (option parameter)
