@@ -1,7 +1,20 @@
 # Release Cycle:
 
 
-- edit indexMaintanance.php with new message, push it to repo
+- edit index.php by adding a message just above the header
+
+				<h3>
+					<center>
+						<font color="blue">
+			Warning: monitoring not working (working on it!). OSG Submission is working.<br/>
+			May 4 2020 Maintanance at 3pm: <br/>
+			the framework is being updated. <br/>
+			Job Submission is suspended. <br/>
+			Jobs already submitted will run normally.
+						</font>
+					</center>
+				</h3>
+
 - on repo, run testRelease.sh from /group/clas12/SubMit/utils/scripts. This will:
 
 	- clone/pull repos to test dir in /group/clas/www/gemc/html
