@@ -26,6 +26,23 @@ use CLAS12OCR;
 
  delete from submissions where user_submission_id=970;
  
+ 
+ # mysql permissions:
+
+show users:
+
+select user, host from mysql.db where db='CLAS12OCR';
+
+show grants:
+
+show grants for 'clas12jserver'@'%.jlab.org';
+
+GRANT ALL ON *.* TO 'clas12jserver'@'%.jlab.org';
+
+current users that access the db: 
+ 
+ show processlist;
+
 
 
 # mysql backup:
