@@ -29,6 +29,10 @@ use CLAS12OCR;
  
  # mysql permissions:
 
+JLAB:
+There is concern about giving thosle privileges to users since it allows users to create account and grant access to non-jlab people.. and, if used in particular ways, can actually give people the ability to execute code on the server. 
+So, normally we try to avoid granting those privileges and just manage account creation for you. 
+
 show users:
 
 select user, host from mysql.db where db='CLAS12OCR';
