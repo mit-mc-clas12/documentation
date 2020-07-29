@@ -17,12 +17,22 @@ mysql --defaults-extra-file=msql_conn.txt -N -s --execute="SELECT scard from CLA
 
 # mysql debugging:
 
-mysql --defaults-extra-file=msql_conn.txt (read)
+### read:
 
+mysql --defaults-extra-file=msql_conn.txt
+use CLAS12OCR;
+use CLAS12TEST;
+
+describe submissions;
 select user_id, user, client_time, user_submission_id from submissions ;
+select scard from submissions where user_submission_id=28;
+select runscript_text from submissions where user_submission_id=28;
+
+### write:
 
 mysql -u clas12jserver -h jsubmit.jlab.org -p
 use CLAS12OCR;
+use CLAS12TEST;
 
  delete from submissions where user_submission_id=970;
  
