@@ -45,6 +45,7 @@ Create the DB, client submit one job and server reads the unsubmitted jobs, then
 To run the singularity image:
 ```
 singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --pid /cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12software:production
+singularity shell --home ${PWD}:/srv --pwd /srv --bind /cvmfs --contain --ipc --pid /cvmfs/singularity.opensciencegrid.org/jeffersonlab/clas12software:devel
 ```
 
 

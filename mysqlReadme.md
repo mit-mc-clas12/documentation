@@ -37,6 +37,17 @@ use CLAS12TEST;
  delete from submissions where user_submission_id=970;
  
  
+ ### Commands usually used to check the test submissions
+ mysql --defaults-extra-file=msql_conn.txt
+ use CLAS12TEST;
+ select user_id, user, client_time, user_submission_id from submissions ;
+ select runscript_text from submissions where user_submission_id=48;
+
+ 
+ 
+ 
+ ## usual test flow
+ 
  # mysql permissions:
 
 JLAB:

@@ -11,7 +11,8 @@ ls xroot://sci-xrootd-ib//osgpool/hallb/
 
 Off-site:
 setenv LD_PRELOAD <path-to-lib>/libXrdPosixPreload.so
-ls xroot://sci-xrootd.jlab.org//osgpool/hallb/
+setenv LD_PRELOAD /usr/lib64/libXrdPosixPreload.so
+ls xroot://sci-xrootd.jlab.org/osgpool/hallb/
 
 
 # Background merging files
