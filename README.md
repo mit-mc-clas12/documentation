@@ -76,38 +76,6 @@ OSG Contacts: https://topology.opensciencegrid.org/contacts
 
 
 
-# HT Condor
-
-[Homepage](https://research.cs.wisc.edu/htcondor/index.html) [Manual](https://research.cs.wisc.edu/htcondor/manual/) [HowTos](https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes) [Description and Examples](http://vivaldi.ll.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorSubmitFile)
-
-Useful commands:
----------------------
-
-To submit a job:
-
-* condor_submit file.condor
-
-Query jobs:
-
-* condor_q
-* condor_q -goodput 
-* condor_q -better-analyze JOBID
-* condor_q  -hold
-
-User History:
-
-* condor_history mauri
-* condor_history -long mauri
-
-Useful Commands:
-* condor_rm ID
-
-
-* Condor Hold:
-condor_hold -constraint 'ClusterId == N && ProcId >= 5000'
-You can also "test" the constraint with condor_q first. condor_q and 
-condor_hold takes the same -const argument.
-
 
 # How to make SubMit.py run from anywhere on a machine:
 
