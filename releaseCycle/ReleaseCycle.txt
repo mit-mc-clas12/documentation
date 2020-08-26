@@ -28,6 +28,11 @@ At this point submitting jobs will:
 
 	- write the scard in /u/group/clas/www/gemc/html/test/web_interface
 
+	To submit to OSG:
+
+	 cd /group/clas12/SubMit/test/SubMit/server/
+	 python src/Submit_UserSubmission.py -s -t --test_database
+
 
 - after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release". Change this to run installRelease with argument.
 
