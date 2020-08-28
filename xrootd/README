@@ -6,13 +6,21 @@ On CUE machines:
 /work/osgpool/hallb/ is rsync'ed (with delete) to the server every 4hrs.
 
 On-site:
+########
+
 setenv LD_PRELOAD /usr/lib64/libXrdPosixPreload.so
-ls xroot://sci-xrootd-ib//osgpool/hallb/
+ls -l xroot://sci-xrootd-ib//osgpool/hallb/clas12/backgroundfiles/
+ls -l xroot://sci-xrootd-ib//osgpool/hallb/clas12/backgroundfiles/rga_fall2018/tor-1.00_sol-1.00/45nA_10604MeV/10k
+
 
 Off-site:
+#########
+
 setenv LD_PRELOAD <path-to-lib>/libXrdPosixPreload.so
 setenv LD_PRELOAD /usr/lib64/libXrdPosixPreload.so
-ls xroot://sci-xrootd.jlab.org/osgpool/hallb/
+
+ls -l xroot://sci-xrootd-ib//osgpool/hallb/clas12/backgroundfiles/
+ls -l xroot://sci-xrootd-ib//osgpool/hallb/clas12/backgroundfiles/rga_fall2018/tor-1.00_sol-1.00/45nA_10604MeV/10k
 
 
 # Background merging files
