@@ -1,19 +1,7 @@
 # Release Cycle:
 
 
-- edit index.php by adding a message just above the header
-
-				<h3>
-					<center>
-						<font color="blue">
-			Warning: monitoring not working (working on it!). OSG Submission is working.<br/>
-			May 4 2020 Maintanance at 3pm: <br/>
-			the framework is being updated. <br/>
-			Job Submission is suspended. <br/>
-			Jobs already submitted will run normally.
-						</font>
-					</center>
-				</h3>
+TESTS:
 
 - on repo, run testRelease.sh from /group/clas12/SubMit/utils/scripts. This will:
 
@@ -34,5 +22,14 @@ At this point submitting jobs will:
 	 python src/Submit_UserSubmission.py -s -t --test_database
 
 
-- after tests: uncomment Maintanance completed in index.php and run updateSubmit.sh. this is the  "official release". Change this to run installRelease with argument.
+
+RELEASE:
+
+- edit indexMaintanance.php
+- modify testRelease.sh so that if "release" is passed, it will do the same things
+- mistakes last time around:
+   Submit dir created instead of SubMit
+   Dir permissions
+
+- after tests: git checkout -- index.php
 
