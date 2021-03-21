@@ -74,7 +74,15 @@ OSG Contacts: https://topology.opensciencegrid.org/contacts
 
 
 
+# To delete empty directories older than N days:
 
+find /volatile/clas12/osg -mindepth 1 -mtime +N -type d -empty -delete
+find /volatile/clas12/osg -mindepth 1 -type d -name log -exec rm -rv {} < why not?
+
+
+# To delete anything other than hipo files
+
+find /volatile/clas12/osg -type f -mtime +10 -not -name '*.hipo' -not -name nodeScript.sh -delete
 
 
 # How to make SubMit.py run from anywhere on a machine:
