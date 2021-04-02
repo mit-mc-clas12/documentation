@@ -13,6 +13,30 @@ Important options:
 *  `scardfile` : location of the steering card
 
 
+# Exit codes:
+
+202 for cvmfs fail load setup
+203 generator fail
+204 gemc fail
+205 evio2hipo fail
+206 (if present) background merging fail
+207 coatjava fail
+208 hipo-utils (dst creation) fail
+210 background merging file does not exist
+211 ls check fail
+
+
+To check exit codes:
+
+condor_history gemc -af:jclusterId ExitStatus ExitCode Cmd -backwards | more
+
+
+# Retry automatically
+
+on_exit_remove = (ExitBySignal == False) && (ExitCode == 0)
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
+periodic_release =  (NumJobStarts < 3) && ((CurrentTime - EnteredCurrentStatus) > (60*60))
+
 
 
 # Steering Card
