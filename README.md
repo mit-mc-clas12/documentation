@@ -31,6 +31,11 @@ To check exit codes:
 condor_history gemc -af:jclusterId ExitStatus ExitCode Cmd -backwards | more
 
 
+
+
+
+
+
 # Retry automatically
 
 on_exit_remove = (ExitBySignal == False) && (ExitCode == 0)
