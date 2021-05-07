@@ -259,3 +259,38 @@ The Clas12 OSG Team
 * OSG: condor_status -pool flock.opensciencegrid.org at scosg16
 * MIT: condor_status -pool t3serv007.mit.edu:11000?sock=collector
 
+
+
+
+
+
+# from Mats: suggested flags for condor
+
+Ok, we have applied a fix for this on our end as well. You can make sure you get it by adding this to your job requirements:
+
+OSG_GLIDEIN_VERSION >= 546
+
+While no longer fully necessary, I would still suggest you do the same "cleaning" in your container before setting up new modules. Here are the environment variables I'm unsetting:
+
+unset ENABLE_LMOD
+unset _LMFILES_
+unset LMOD_ANCIENT_TIME
+unset LMOD_arch
+unset LMOD_CMD
+unset LMOD_COLORIZE
+unset LMOD_DEFAULT_MODULEPATH
+unset LMOD_DIR
+unset LMOD_FULL_SETTARG_SUPPORT
+unset LMOD_PACKAGE_PATH
+unset LMOD_PKG
+unset LMOD_PREPEND_BLOCK
+unset LMOD_SETTARG_CMD
+unset LMOD_SETTARG_FULL_SUPPORT
+unset LMOD_sys
+unset LMOD_SYSTEM_DEFAULT_MODULES
+unset LMOD_VERSION
+unset LOADEDMODULES
+unset MODULEPATH
+unset MODULEPATH_ROOT
+unset MODULESHOME
+
