@@ -19,11 +19,13 @@ Important options:
 203 generator fail
 204 gemc fail
 205 evio2hipo fail
-206 (if present) background merging fail
+206 (if present) bg-merger fail
 207 coatjava fail
 208 hipo-utils (dst creation) fail
 210 background merging file does not exist
-211 ls check fail
+211 "ls" check fail
+212 bgMerginFilename failure
+
 
 
 To check exit codes:
@@ -32,6 +34,9 @@ condor_history gemc -af:jclusterId ExitStatus ExitCode Cmd -backwards | more
 
 
 
+To find out where job is held:
+condor_q 3623085 -constraint 'jobstatus == 5' -af MATCH_EXP_JOBGLIDEIN_ResourceName | sort | uniq -c
+condor_q gemc -constraint 'jobstatus == 5' -af MATCH_EXP_JOBGLIDEIN_ResourceName | sort | uniq -c
 
 
 

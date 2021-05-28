@@ -57,6 +57,11 @@ The job goes “oh okay…..so anybody have 1 kb of disk space for me” *cue a 
 
 
 
+
+change requirement
+
+condor_qedit -const 'OSG_GLIDEIN_VERSION >= 546' 'OSG_GLIDEIN_VERSION >= 534'
+
 To submit a job:
 
 * condor_submit file.condor
