@@ -25,7 +25,7 @@ Important options:
 210 background merging file does not exist
 211 "ls" check fail
 212 bgMerginFilename failure
-
+213 df fail
 
 
 To check exit codes:

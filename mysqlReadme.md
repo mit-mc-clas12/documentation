@@ -37,11 +37,10 @@ use CLAS12TEST;
 
 - delete entry
  delete from submissions where user_submission_id=970;
- 
- - mark submission as invalid
- select user_id, user, client_time, user_submission_id, run_status from submissions ;
- 
- 
+  
+ - change status of submission
+ update submissions set run_status='Not Submitted' where user_submission_id='3218';
+
  
  ## usual test flow
  
@@ -79,12 +78,11 @@ note: when running python utils/create_database.py the credentials in msqlrw.txt
 
 
 
-# mysql changes:
+# table changes:
 
 add column:
 
 alter table CLAS12OCR.submissions add column run_job_text VARCHAR(15) AFTER clas12_condor_text;
-
 
 
 # mysql priority:
