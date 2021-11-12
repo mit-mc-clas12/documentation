@@ -3,10 +3,10 @@
 
 TESTS:
 
-- on repo, run testRelease.sh from /group/clas12/SubMit/utils/scripts. This will:
+- on repo, run testRelease.sh from /home/gemc/software/Submit/utils/scripts. This will:
 
 	- clone/pull repos to test dir in /group/clas/www/gemc/html
-	- clone/pull repos to test dir in /group/clas12/SubMit/
+	- clone/pull repos to test dir in /home/gemc/software/Submit/
 	- copy indexMaintanance.php to index.php
 	- copy stats files into test dir
 	- copy sql permissions files into test dir
@@ -18,7 +18,7 @@ At this point submitting jobs will:
 
 	To submit to OSG:
 
-	 cd /group/clas12/SubMit/test/SubMit/server/
+	 cd /home/gemc/software/Submit/test/SubMit/server/
 	 python src/Submit_UserSubmission.py -s -t --test_database
 
 

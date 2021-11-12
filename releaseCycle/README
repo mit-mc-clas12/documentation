@@ -16,7 +16,7 @@ https://gemc.jlab.org/test/web_interface/index.php
 - SubMit/utils
 
 
-** /group/clas12/SubMit/test
+** /home/gemc/software/Submit/test
 
 - SubMit/server
 - SubMit/utils
@@ -38,6 +38,6 @@ https://gemc.jlab.org/test/web_interface/index.php
 
 - To submit we need the modified msql_conn_test.txt:
 
-cp /group/clas12/SubMit/msql_conn.txt /group/clas12/SubMit/test/SubMit/msql_conn_test.txt
-cd /group/clas12/SubMit/test/SubMit/
+cp /home/gemc/software/Submit/msql_conn.txt /home/gemc/software/Submittest/SubMit/msql_conn_test.txt
+cd /home/gemc/software/Submit/test/SubMit/
 sed -i s/CLAS12OCR/CLAS12TEST/ msql_conn_test.txt

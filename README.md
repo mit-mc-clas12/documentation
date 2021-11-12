@@ -166,7 +166,7 @@ If files are edited on a windows machine, the ff is ```\r\n```. To change it to 
 - show or make available options of the software versions inside the container
 - error message if writing scard was not successful
 - error if pool node doesn't make sense - in that case do not mark as submitted
-- change   scripts_baseDir  = "/group/clas12/SubMit" to relative path 
+- change   scripts_baseDir  = "/home/gemc/software/Submit/" to relative path 
 - remove "#" from the scard in mysql (note: this may break things?)
 - add a test for each single generators
 - test release cycle and perfect it
