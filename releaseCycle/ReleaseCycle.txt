@@ -1,6 +1,12 @@
 # Release Cycle:
 
 
+clas12 mcgen release:
+
+check OSG mail folder, compose new message and format > make RICH so can copy links from original message.
+
+
+
 TESTS:
 
 - on repo, run testRelease.sh from /home/gemc/software/Submit/utils/scripts. This will:

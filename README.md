@@ -26,6 +26,8 @@ Important options:
 211 "ls" check fail
 212 bgMerginFilename failure
 213 df fail
+214 hipo-utils test
+215 hipo size < 100 
 
 
 To check exit codes:
