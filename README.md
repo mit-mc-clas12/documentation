@@ -28,6 +28,10 @@ Important options:
 213 df fail
 214 hipo-utils test
 215 hipo size < 100 
+220 bgMerginFilename /usr/lib64/libXrdPosixPreload.so does not exist
+221 bgMerginFilename remot xrootd dir not found
+223 bgMerginFilename random cannot be computed
+222 bgMerginFilename background file does not exist
 
 
 To check exit codes:
