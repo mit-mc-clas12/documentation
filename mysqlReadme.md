@@ -74,7 +74,7 @@ mysqldump -h jsubmit.jlab.org -u ungaro -p CLAS12OCR > d.back
 
 cat d.back | mysql -h jsubmit.jlab.org -u ungaro -p clas12Backup
 
-note: when running python utils/create_database.py the credentials in msqlrw.txt should be the ones of the user that created the DB
+note: when running python3 utils/create_database.py the credentials in msqlrw.txt should be the ones of the user that created the DB
 
 
 
@@ -94,22 +94,7 @@ mysql -u clas12jserver -h jsubmit.jlab.org -p
  update users set priority='1' where user='ungaro';
 
 
-# MysqlDB on Mac
+# Mysql on Mac
 
-This package will be dropped in python 3 and higher.
-pip cannot install it anymore.
-Notice that on Mac:
-
-locate mysqlclient
-/usr/local/Cellar/mysql/8.0.16/lib/libmysqlclient.21.dylib
-/usr/local/Cellar/mysql@5.7/5.7.25/lib/libmysqlclient.20.dylib
-
-
-This worked for me on Mojave: 
-
-https://stackoverflow.com/questions/1448429/how-to-install-mysqldb-python-data-access-library-to-mysql-on-mac-os-x
-
-
-I had to make that link (in /mysql@5.7) and manually remove ssl from the compilation directly. After that sudo python setup.py install worked.
-
+Need to test pymysql
 

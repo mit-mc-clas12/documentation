@@ -25,7 +25,7 @@ At this point submitting jobs will:
 	To submit to OSG:
 
 	 cd /home/gemc/software/Submit/test/SubMit/server/
-	 python src/Submit_UserSubmission.py -s -t --test_database
+	 python3 src/Submit_UserSubmission.py -s -t --test_database
 
 
 

@@ -72,9 +72,9 @@ Create a dir and clone the repoos:
 
 Create the DB, client submit one job and server reads the unsubmitted jobs, then submit it:
 
-* python utils/create_database.py -d 1      
-* python client/src/SubMit.py -d 1                                                                 
-* python server/src/Submit_batch.py -s -d 1  
+* python3 utils/create_database.py -d 1      
+* python3 client/src/SubMit.py -d 1                                                                 
+* python3 server/src/Submit_batch.py -s -d 1  
 
 
 
@@ -185,7 +185,7 @@ If files are edited on a windows machine, the ff is ```\r\n```. To change it to 
 ## Long term todos:
 
 1. unit tests 
-2. python packages installation rather than importing dirs and files within the same project
+2. python3 packages installation rather than importing dirs and files within the same project
 3. configurations file (currently gcard available files in utils) should be shared between client and web interface
 3. send email with farm submission ID, out location. 
 4. monitor job statistics (memory, completion, resource usage)
