@@ -7,27 +7,6 @@ check OSG mail folder, compose new message and format > make RICH so can copy li
 
 
 
-TESTS:
-
-- on repo, run testRelease.sh from /home/gemc/software/Submit/utils/scripts. This will:
-
-	- clone/pull repos to test dir in /group/clas/www/gemc/html
-	- clone/pull repos to test dir in /home/gemc/software/Submit/
-	- copy indexMaintanance.php to index.php
-	- copy stats files into test dir
-	- copy sql permissions files into test dir
-	- update permission so gemc user can write on the various dirs
-
-At this point submitting jobs will:
-
-	- write the scard in /u/group/clas/www/gemc/html/test/web_interface
-
-	To submit to OSG:
-
-	 cd /home/gemc/software/Submit/test/SubMit/server/
-	 python3 src/Submit_UserSubmission.py -s -t --test_database
-
-
 
 RELEASE:
 
