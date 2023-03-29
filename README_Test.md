@@ -29,7 +29,7 @@ clone or update $grepo/utils, client
 
 set test_dir=/home/gemc/software/Submit/test
 
-clone or update $grepo/utils, client, server
+clone or update $test_dir/utils, client, server
 
 make sure msql_conn_test.txt is in $test_dir
 
