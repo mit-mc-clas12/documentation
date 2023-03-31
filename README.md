@@ -199,7 +199,7 @@ If files are edited on a windows machine, the ff is ```\r\n```. To change it to 
 - replaced the main page sidebar menu
 - uniforming style for all php and html 
 - collect css style in common between varrious php files  (Sangbaek)
-- when "submit" is pressed, add directory output message like: "Output will be at /lustre/expphy/volatile/clas12/osg/<username> at the bottom of the table." 
+- when "submit" is pressed, add directory output message like: "Output will be at /volatile/clas12/osg/<username> at the bottom of the table." 
 - limit use to web submission, not using the scripts. Remove any doc references. 
 - client: get username from command line if specified
 - web submission work w/o generator arguments
