@@ -32,7 +32,7 @@ Important options:
 221 bgMerginFilename remot xrootd dir not found
 223 bgMerginFilename random cannot be computed
 222 bgMerginFilename background file does not exist
-
+230 denoising fail
 
 To check exit codes:
 
