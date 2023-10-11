@@ -33,6 +33,8 @@ Important options:
 223 bgMerginFilename random cannot be computed
 222 bgMerginFilename background file does not exist
 230 denoising fail
+241 gcard not found
+242 yaml not found
 
 To check exit codes:
 
